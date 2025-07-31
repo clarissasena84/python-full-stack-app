@@ -58,4 +58,4 @@ pip install flask mysql-connector-python
 - Os arquivos app.py e requirements.txt devem estar na raiz do projeto
 
 ## Rota do Randon (ao acessar executa a função rodando de números aleatórios)
-http://localhost:5000/ali/todos/random
+http://localhost:5000/api/todos/random
