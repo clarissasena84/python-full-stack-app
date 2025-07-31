@@ -61,6 +61,10 @@ def delete_todo(todo_id):
     cur.close(); conn.close()
     return "", 204
 
+@app.route("/api/todos/random", methods=["GET"])
+def random_number():
+    return str(random.randint(1, 100))
+
 # ---------- run ----------
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)

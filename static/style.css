@@ -3,25 +3,32 @@
 /* Vamos usar uma fonte que funciona em todos os sistemas */
 body {
   font-family: system-ui, -apple-system, sans-serif;
-  background-color: #f5f5f5;     /* Cinzento muito claro */
-  margin: 0;                     /* Tira a margem default */
+  margin: 0;
+  background-image: url("images/caderno.jpg"); /* ajusta o nome se for diferente */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
-/* Um contentor branco centrado na página */
+
 .container {
-  max-width: 600px;              /* Largura máxima */
-  margin: 3rem auto;             /* 3rem em cima/baixo, auto nas laterais */
-  background-color: #ffffff;     /* Fundo branco */
-  padding: 2rem;                 /* Espaçamento interno */
-  border-radius: 12px;           /* Cantos arredondados */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.8); /* branco translúcido para legibilidade */
 }
 
 /* ========== Título ========== */
 
 h1 {
   margin-top: 0;                 /* Remove espaço extra em cima */
-  text-align: center;            /* Centraliza o texto */
+  text-align: center;     /* Centraliza o texto */
+  color: #fd0101;          /* Cor VERMELHA */
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+
 }
 
 /* ========== Formulário ========== */
@@ -43,7 +50,7 @@ h1 {
   padding: 0 1rem;
   font-size: 1rem;
   border: none;
-  background-color: #0077cc;     /* Azul */
+  background-color: #030303;     /* Preto */
   color: #fff;                   /* Texto branco */
   border-radius: 6px;
   cursor: pointer;
@@ -56,33 +63,49 @@ h1 {
 /* ========== Lista de Tarefas ========== */
 
 #todo-list {
-  list-style: none;              /* Remove as bolinhas à esquerda */
-  padding: 0;
+  list-style: none;
+  padding: 2rem;
   margin-top: 1.5rem;
+  background-image: url("image/caderno.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  min-height: 400px;
 }
 
+
 #todo-list li {
-  display: flex;                 /* Põe texto e botões em linha */
+  display: grid;
+  grid-template-columns: 1fr auto auto; /* texto | ✓/↺ | 🗑 */
   align-items: center;
-  justify-content: space-between;
+  gap: 0.5rem;
   padding: 0.5rem 0;
-  border-bottom: 1px solid #eee; /* Linha cinzenta muito clara */
+  border-bottom: 1px dashed #ddd;
+}
+
+#todo-list li span {
+  padding-left: 1rem;
 }
 
 #todo-list li.done span {
   text-decoration: line-through; /* Risco no texto concluído */
-  color: #999;                   /* Cor cinzenta */
+  color: #fd0101;                   /* Cor VERMELHA */
 }
 
 /* Botões da lista (concluir ou apagar) */
 #todo-list li button {
-  margin-left: 0.25rem;
-  border: none;
+  margin: 0;
+  padding: 0;
   background: none;
-  font-size: 1rem;
+  border: none;
+  font-size: 1.2rem;
   cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
 }
 
 #todo-list li button:hover {
-  color: #0077cc;                /* Azul quando passa o rato por cima */
+  color: #0077cc;
 }
+
